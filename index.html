@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guess My Golf Handicap</title>
+<meta name="description" content="Handicap di gioco e simulazione WHS per i campi da golf italiani. Funziona offline, senza account.">
+<style>
+  :root {
+    --bg: #f4f8f4;
+    --card: #ffffff;
+    --ink: #0a2c1b;
+    --muted: #4a6b58;
+    --faint: #7d9689;
+    --accent: #1a7a45;
+    --accent-soft: #e3f2e8;
+    --line: rgba(12, 60, 38, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #06180f;
+      --card: #0c2418;
+      --ink: #f4fff4;
+      --muted: #a9c6b4;
+      --faint: #7c9b89;
+      --accent: #4fd18a;
+      --accent-soft: rgba(79, 209, 138, 0.12);
+      --line: rgba(255, 255, 255, 0.12);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header { text-align: center; padding: 1rem 0 2.5rem; }
+  .mark {
+    width: 76px; height: 76px; margin: 0 auto 1.25rem;
+    border-radius: 22px; background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 38px;
+  }
+  h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -0.02em; }
+  .lead { color: var(--muted); font-size: 1.1rem; margin: 0 auto; max-width: 32rem; }
+  h2 { font-size: 1.25rem; margin: 2.5rem 0 .75rem; letter-spacing: -0.01em; }
+  p { margin: 0 0 1rem; color: var(--muted); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  .card h3 { margin: 0 0 .4rem; font-size: 1rem; color: var(--ink); }
+  .card p { margin: 0; font-size: .95rem; }
+  a { color: var(--accent); font-weight: 600; }
+  .mail {
+    display: inline-block; margin-top: .5rem;
+    background: var(--accent-soft); border: 1px solid var(--line);
+    border-radius: 12px; padding: .7rem 1.1rem;
+    text-decoration: none; font-size: 1rem;
+  }
+  .note {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .note p { margin: 0; font-size: .95rem; }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: var(--faint); font-size: .875rem;
+    display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
+  }
+  footer a { color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark">⛳</div>
+    <h1>Guess My Golf Handicap</h1>
+    <p class="lead">
+      Quanti colpi ricevi su questo percorso, e che handicap avrai dopo la gara.
+      Con i campi da golf italiani già dentro.
+    </p>
+  </header>
+
+  <h2>Che cosa fa</h2>
+
+  <div class="card">
+    <h3>Handicap di gioco</h3>
+    <p>
+      Scegli circolo, percorso e colore dei battitori: l'app calcola i colpi che
+      ricevi con la formula ufficiale del World Handicap System. Sono inclusi 220
+      circoli, 913 percorsi e 4410 battitori omologati italiani, con Course
+      Rating e Slope di ciascuno.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Il nuovo handicap dopo la gara</h3>
+    <p>
+      Il risultato ufficiale arriva il giorno dopo. Inserisci i punti Stableford
+      e sai subito come cambierà il tuo Handicap Index: media dei migliori 8
+      differenziali sugli ultimi 20, tabella per record incompleto, riduzione per
+      score eccezionale, soft cap e hard cap.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Il calcolo non è una scatola nera</h3>
+    <p>
+      Ogni passaggio è visibile: quali otto differenziali stanno facendo il tuo
+      handicap, la loro somma, la divisione, l'arrotondamento e le correzioni. E
+      una guida completa spiega il sistema handicap con tutte le formule.
+    </p>
+  </div>
+
+  <div class="note">
+    <p>
+      <strong>Funziona senza rete e senza account.</strong> I dati dei percorsi
+      sono dentro l'app, i tuoi risultati restano sul telefono.
+    </p>
+  </div>
+
+  <h2 id="assistenza">Assistenza</h2>
+
+  <p>
+    Per segnalare un problema, un numero che non torna o un percorso mancante,
+    scrivi pure. Rispondo io, e mi fa piacere ricevere segnalazioni precise:
+    indica circolo, percorso, battitori e punteggio, così posso riprodurre il
+    caso.
+  </p>
+
+  <a class="mail" href="mailto:blackbird3113.dev@gmail.com">blackbird3113.dev@gmail.com</a>
+
+  <h2>Una nota sui numeri</h2>
+
+  <p>
+    Il valore calcolato è una previsione. Quello ufficiale può differire di
+    qualche decimo se viene applicato un correttivo PCC, che si determina dopo la
+    gara sulla base dei risultati di tutti i partecipanti e prima non è
+    conoscibile da nessuno.
+  </p>
+
+  <p>
+    L'app non è un prodotto ufficiale di alcuna federazione né è a essa
+    collegata. I parametri dei percorsi sono dati pubblici.
+  </p>
+
+  <footer>
+    <span>© 2026 Francesco Merlo</span>
+    <span><a href="privacy.html">Informativa sulla privacy</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
