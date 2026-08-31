@@ -37,10 +37,19 @@
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-  .back { display: inline-block; margin-bottom: 1.5rem; text-decoration: none; font-weight: 600; color: var(--accent); }
+  .back { display: inline-block; text-decoration: none; font-weight: 600; color: var(--accent); }
+  .testa { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .lingue { display: flex; gap: .35rem; font-size: .85rem; }
+  .lingue a, .lingue span {
+    padding: .2rem .55rem; border-radius: .4rem; text-decoration: none;
+    border: 1px solid var(--line); color: var(--muted); font-weight: 600;
+  }
+  .lingue .qui { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   h1 { font-size: clamp(1.6rem, 5vw, 2.1rem); margin: 0 0 .35rem; letter-spacing: -0.02em; }
   .sub { color: var(--faint); font-size: .9rem; margin: 0 0 2rem; }
   h2 { font-size: 1.15rem; margin: 2.25rem 0 .6rem; letter-spacing: -0.01em; }
+  ul { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--muted); }
+  li { margin-bottom: .35rem; }
   p { margin: 0 0 1rem; color: var(--muted); }
   strong { color: var(--ink); }
   a { color: var(--accent); font-weight: 600; }
@@ -62,10 +71,16 @@
 <body>
 <div class="wrap">
 
-  <a class="back" href="index.html">‹ Guess My Golf Handicap</a>
+  <div class="testa">
+    <a class="back" href="index.html">‹ Guess My Golf Handicap</a>
+    <nav class="lingue" aria-label="Lingua">
+      <span class="qui" aria-current="page">Italiano</span>
+      <a href="privacy-en.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
 
   <h1>Informativa sulla privacy</h1>
-  <p class="sub">Ultimo aggiornamento: 24 agosto 2026</p>
+  <p class="sub">Ultimo aggiornamento: 31 agosto 2026</p>
 
   <div class="lead">
     <p>
@@ -77,9 +92,20 @@
 
   <h2>Quali dati inserisci e dove finiscono</h2>
 
+  <p>Nell'app puoi inserire:</p>
+
+  <ul>
+    <li>il tuo nome, facoltativo;</li>
+    <li>il tuo Handicap Index e, se vuoi, l'handicap più basso degli ultimi 12 mesi;</li>
+    <li>lo storico dei tuoi Score Differential, con la data di ogni giro;</li>
+    <li>i battitori che giochi, maschili o femminili;</li>
+    <li>fino a dieci percorsi inseriti a mano — il nome che scegli tu, più par,
+        Course Rating e Slope — per i campi che non sono nell'elenco.</li>
+  </ul>
+
   <p>
-    Nell'app puoi inserire il tuo nome (facoltativo), il tuo Handicap Index e lo
-    storico dei tuoi Score Differential.
+    L'app conserva anche alcune preferenze: la lingua, il tema chiaro o scuro,
+    l'ultimo circolo scelto e se vuoi rivedere il promemoria dopo ogni gara.
   </p>
 
   <p>
